@@ -692,7 +692,7 @@ p {
 .modal-input:focus {
   border-color: #4d5ae5;
 }
-.modal-input:focus + .modal-icon {
+.modal-input:focus + .modal-icon use {
   fill: #4d5ae5;
 }
 .modal-textarea {
