@@ -584,8 +584,6 @@ p {
 .subscribe-icon {
   fill: currentColor;
   margin-left: 16px;
-  width: 24px;
-  height: 24px;
 }
 .backdrop {
   position: fixed;
