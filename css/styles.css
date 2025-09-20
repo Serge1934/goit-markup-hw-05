@@ -736,7 +736,7 @@ p {
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
-.check-box {
+span.check-box {
   width: 16px;
   height: 16px;
   display: inline-flex;
@@ -750,11 +750,11 @@ p {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-check:checked + .check-text .check-box {
+.modal-check:checked + .check-text span.check-box {
   background-color: #404bbf;
   border: none;
 }
-.modal-check:checked + .check-text .check-box .checkmark-icon {
+.modal-check:checked + .check-text span.check-box .checkmark-icon {
   fill: #f4f4fd;
 }
 .policy-link {
