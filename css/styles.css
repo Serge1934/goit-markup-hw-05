@@ -737,9 +737,9 @@ p {
   color: #8e8f99;
 }
 span.check-box {
+  display: inline-flex;
   width: 16px;
   height: 16px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -753,8 +753,6 @@ span.check-box {
 .modal-check:checked + .check-text span.check-box {
   background-color: #404bbf;
   border: none;
-}
-.modal-check:checked + .check-text span.check-box .checkmark-icon {
   fill: #f4f4fd;
 }
 .policy-link {
