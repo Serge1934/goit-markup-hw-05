@@ -608,22 +608,24 @@ p {
   transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
-  background-color: #fcfcfc;
+  padding: 72px 24px 24px;
+  background: #fcfcfc;
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  padding: 72px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-close-btn {
+.modal-close {
   position: absolute;
   top: 24px;
   right: 24px;
   width: 24px;
   height: 24px;
+  font-family: "Roboto", sans-serif;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -631,59 +633,108 @@ p {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-close-btn:hover,
-.modal-close-btn:focus {
+.close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close:hover,
+.modal-close:focus {
   background-color: #404bbf;
   border: none;
 }
-.close-icon {
-  fill: #2e2f42;
-}
-.modal-close-btn:hover .close-icon,
-.modal-close-btn:focus .close-icon {
+.modal-close:hover .close-icon,
+.modal-close:focus .close-icon {
   fill: #ffffff;
 }
 .modal-title {
-  color: #2e2f42;
+  margin: 0 0 16px;
   text-align: center;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  margin-bottom: 16px;
+  color: #2e2f42;
 }
 .modal-field {
-  display: block;
   margin-bottom: 8px;
+}
+.field-comment {
+  margin-bottom: 16px;
+}
+.field-privacy {
+  margin-bottom: 24px;
 }
 .modal-label {
   display: block;
-  color: #8e8f99;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  margin-bottom: 4px;
+  color: #8e8f99;
 }
-.modal-input,
-.modal-textarea {
+.input-wrap {
+  position: relative;
+}
+.modal-input {
   width: 100%;
   height: 40px;
-  border-radius: 4px;
+  padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
   background-color: transparent;
-  padding: 0 16px;
-  color: #2e2f42;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-input:focus,
+.modal-input:focus {
+  border-color: #4d5ae5;
+}
+.input-wrap:focus-within .modal-icon {
+  fill: #4d5ae5;
+}
+.modal-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-textarea {
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .modal-textarea:focus {
   border-color: #4d5ae5;
 }
-.modal-textarea {
-  height: 120px;
-  resize: none;
-  padding: 8px 16px;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.check-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 .check-box {
   width: 16px;
@@ -698,16 +749,6 @@ p {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.check-text {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #8e8f99;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  user-select: none;
 }
 .modal-check:checked + .check-text .check-box {
   background-color: #404bbf;
@@ -728,7 +769,7 @@ p {
   border-radius: 4px;
   background-color: #4d5ae5;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: \"Roboto\", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
