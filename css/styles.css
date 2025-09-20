@@ -686,7 +686,7 @@ p {
 .modal-input:focus {
   border-color: #4d5ae5;
 }
-.modal-input:focus + .modal-icon use {
+.input-wrap:focus-within .modal-icon {
   fill: #4d5ae5;
 }
 .modal-icon {
